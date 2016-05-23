@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+  <ASR5500>
+    <Category>
+      <cell1>
+        タイトル
+      </cell1>
+      <cell2>
+        本文
+      </cell2>
+      <cell3>
+        本文
+      </cell3>
+      <cell4>
+        本文
+      </cell4>
+      <cell5>
+        本文
+      </cell5>
+      <cell6>
+        本文
+      </cell6>
+      <cell7>
+        本文
+      </cell7>
+      <cell8>
+        本文
+      </cell8>
+    </Category>
+    
+    <Content>
+      <cell1>
+        日付は当日になっているか？
+      </cell1>
+      <cell2>
+        【手動】コロンを付与したか？[Summary]CQAP:ASR5500~
+      </cell2>
+      <cell3>
+        Inspection QTYの数量は正しいか？
+      </cell3>
+      <cell4>
+        【手動】HWWNがあるときに、Defect QTYの数量から、HWWNを差し引いたか？
+      </cell4>
+      <cell5>
+        Defect QTYの数量は正しいか？
+      </cell5>
+      <cell6>
+        FYI　QTYの数量は正しいか？
+      </cell6>
+      <cell7>
+        検査した期間のFrom日付とTo日付は正しいか？
+      </cell7>
+      <cell8>
+        【手動】HWWNがあるときに、Defect QTYの数量から、HWWNを差し引いたか？
+      </cell8>
+    </Content>
+  </ASR5500>
+
