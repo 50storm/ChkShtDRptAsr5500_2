@@ -59,7 +59,7 @@
 			
 			</td>
 			<td>
-                <asp:Label ID="Content01" runat="server" Text="Label">日付は当日になっているか？  </asp:Label>
+                <asp:Label ID="Content01" runat="server" Text="Label">XXXXXXX </asp:Label>
 			</td>
 			<td>
 			    <asp:CheckBox ID="ChkBoxMaker01" runat="server" />
@@ -75,7 +75,7 @@
 			    
 			    </td>
 			    <td>
-                    <asp:Label ID="Content02" runat="server" Text="Label">【手動】コロンを付与したか？[Summary]CQAP:ASR5500~ </asp:Label>
+                    <asp:Label ID="Content02" runat="server" Text="Label">XXXXXXXX </asp:Label>
 			    </td>
 			    <td>
 			        <asp:CheckBox ID="ChkBoxMaker02" runat="server" />
@@ -89,7 +89,7 @@
 			    	<asp:Label ID="Category03" runat="server" Text="Label">本文 </asp:Label>
 			    </td>
 			    <td>
-                    <asp:Label ID="Content03" runat="server" Text="Label">Inspection QTYの数量は正しいか？  </asp:Label>
+                    <asp:Label ID="Content03" runat="server" Text="Label">XXXXXXXXX </asp:Label>
 			    </td>
 			    <td>
 			        <asp:CheckBox ID="ChkBoxMaker03" runat="server" />
@@ -103,7 +103,7 @@
 			    	<asp:Label ID="Category04" runat="server" Text="Label">本文 </asp:Label>
 			    </td>
 			    <td>
-                    <asp:Label ID="Content04" runat="server" Text="Label">【手動】HWWNがあるときに、Defect QTYの数量から、HWWNを差し引いたか？  </asp:Label>
+                    <asp:Label ID="Content04" runat="server" Text="Label">XXXXXXXXXX</asp:Label>
 			    </td>
 			    <td>
 			        <asp:CheckBox ID="ChkBoxMaker04" runat="server" />
@@ -117,7 +117,7 @@
 			    	<asp:Label ID="Category05" runat="server" Text="Label">本文 </asp:Label>
 			    </td>
 			    <td>
-                    <asp:Label ID="Content05" runat="server" Text="Label">Defect QTYの数量は正しいか？  </asp:Label>
+                    <asp:Label ID="Content05" runat="server" Text="Label">XXXXXXXXXXXXXXX </asp:Label>
 			    </td>
 			    <td>
 			        <asp:CheckBox ID="ChkBoxMaker05" runat="server" />
@@ -131,7 +131,7 @@
 			    	<asp:Label ID="Category06" runat="server" Text="Label">本文 </asp:Label>
 			    </td>
 			    <td>
-                    <asp:Label ID="Content06" runat="server" Text="Label"> FYI　QTYの数量は正しいか？ </asp:Label>
+                    <asp:Label ID="Content06" runat="server" Text="Label"> XXXXXXXXXXXXXXX</asp:Label>
 			    </td>
 			    <td>
 			        <asp:CheckBox ID="ChkBoxMaker06" runat="server" />
@@ -145,7 +145,7 @@
 			    	<asp:Label ID="Category07" runat="server" Text="Label">本文 </asp:Label>
 			    </td>
 			    <td>
-                    <asp:Label ID="Content07" runat="server" Text="Label">検査した期間のFrom日付とTo日付は正しいか？  </asp:Label>
+                    <asp:Label ID="Content07" runat="server" Text="Label">XXXXXXXXXXXXXXX  </asp:Label>
 			    </td>
 			    <td>
 			        <asp:CheckBox ID="ChkBoxMaker07" runat="server" />
@@ -159,7 +159,7 @@
 			    	<asp:Label ID="Category08" runat="server" Text="Label">本文 </asp:Label>
 			    </td>
 			    <td>
-                    <asp:Label ID="Content08" runat="server" Text="Label">【手動】HWWNがあるときに、Defect QTYの数量から、HWWNを差し引いたか？  </asp:Label>
+                    <asp:Label ID="Content08" runat="server" Text="Label">XXXXXXXXXXXXXXXXX </asp:Label>
 			    </td>
 			    <td>
 			        <asp:CheckBox ID="ChkBoxMaker08" runat="server" />

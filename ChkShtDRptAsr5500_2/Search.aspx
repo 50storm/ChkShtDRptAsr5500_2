@@ -19,7 +19,8 @@
         });
     </script>
     <h2>登録データ検索</h2>
-    <div style="border:1px solid black; ">
+    <%--<div style="border-bottom:1px solid black; ">--%>
+    <div>
     <asp:TextBox ID="txtDateFrom" runat="server"></asp:TextBox>～
     <asp:TextBox ID="txtDateTo" runat="server"></asp:TextBox>
     <asp:Button ID="btnSearch" runat="server" Text="検索" />

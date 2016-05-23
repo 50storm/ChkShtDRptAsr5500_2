@@ -40,7 +40,7 @@ Partial Public Class Asr5500ChkSheetDataContext
   #End Region
 	
 	Public Sub New()
-		MyBase.New(Global.System.Configuration.ConfigurationManager.ConnectionStrings("devConnectionString").ConnectionString, mappingSource)
+		MyBase.New(Global.System.Configuration.ConfigurationManager.ConnectionStrings("ConnectionString").ConnectionString, mappingSource)
 		OnCreated
 	End Sub
 	

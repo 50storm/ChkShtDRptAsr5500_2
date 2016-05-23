@@ -421,6 +421,43 @@ Public Class ChkShtDRptAsr5500
     End Sub
 
 
+    Private Sub setView()
+        Dim CellsSetting As XElement = XElement.Load(My.Settings("CellsSettings").ToString().Trim())
+
+        Dim qContentCells = (From x In CellsSetting.<Content>
+                             Select x.<cell1>.Value, x.<cell2>.Value, x.<cell3>.Value, x.<cell4>.Value,
+                                 x.<cell5>.Value, x.<cell6>.Value, x.<cell7>.Value, x.<cell8>.Value).ToArray()
+
+        'Content
+        Me.Content01.Text = qContentCells(0).cell1.Trim()
+        Me.Content02.Text = qContentCells(0).cell2.Trim()
+        Me.Content03.Text = qContentCells(0).cell3.Trim()
+        Me.Content04.Text = qContentCells(0).cell4.Trim()
+        Me.Content05.Text = qContentCells(0).cell5.Trim()
+        Me.Content06.Text = qContentCells(0).cell6.Trim()
+        Me.Content07.Text = qContentCells(0).cell7.Trim()
+        Me.Content08.Text = qContentCells(0).cell8.Trim()
+
+
+
+        'Cateory
+        Dim qCategoryCells = (From x In CellsSetting.<Category>
+                              Select x.<cell1>.Value, x.<cell2>.Value, x.<cell3>.Value, x.<cell4>.Value,
+                                  x.<cell5>.Value, x.<cell6>.Value, x.<cell7>.Value, x.<cell8>.Value).ToArray()
+
+        Me.Category01.Text = qCategoryCells(0).cell1.Trim()
+        Me.Category02.Text = qCategoryCells(0).cell2.Trim()
+        Me.Category03.Text = qCategoryCells(0).cell3.Trim()
+        Me.Category04.Text = qCategoryCells(0).cell4.Trim()
+        Me.Category05.Text = qCategoryCells(0).cell5.Trim()
+        Me.Category06.Text = qCategoryCells(0).cell6.Trim()
+        Me.Category07.Text = qCategoryCells(0).cell7.Trim()
+        Me.Category08.Text = qCategoryCells(0).cell8.Trim()
+
+
+
+    End Sub
+
 
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -430,6 +467,7 @@ Public Class ChkShtDRptAsr5500
             If Page.IsPostBack Then
 
             Else
+                Me.setView()
 
                 If Me.Session("searchKey") Is Nothing Then
 

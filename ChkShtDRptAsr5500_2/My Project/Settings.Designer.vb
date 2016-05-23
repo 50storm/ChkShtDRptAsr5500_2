@@ -56,11 +56,21 @@ Namespace My
         
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("C:\Users\higarashi\Documents\Visual Studio 2015\Projects\ChkShtDRptAsr5500\ChkSht"& _ 
-            "DRptAsr5500\MailSetting.xml")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("C:\Users\Hiro\Documents\Visual Studio 2015\Projects\ChkShtDRptAsr5500_2\ChkShtDRp"& _ 
+            "tAsr5500_2\MailSetting.xml")>  _
         Public ReadOnly Property MailSettings() As String
             Get
                 Return CType(Me("MailSettings"),String)
+            End Get
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("C:\Users\Hiro\Documents\Visual Studio 2015\Projects\ChkShtDRptAsr5500_2\ChkShtDRp"& _ 
+            "tAsr5500_2\CellsSetting.xml")>  _
+        Public ReadOnly Property CellsSettings() As String
+            Get
+                Return CType(Me("CellsSettings"),String)
             End Get
         End Property
     End Class

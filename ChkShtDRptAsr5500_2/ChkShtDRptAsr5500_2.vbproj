@@ -84,6 +84,7 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CellsSetting.xml" />
     <Content Include="ChkShtDRptAsr5500.aspx" />
     <Content Include="MailForm.aspx" />
     <Content Include="MailSetting.xml">
