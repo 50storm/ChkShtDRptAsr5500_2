@@ -7,24 +7,34 @@ Public Class MailForm
     Inherits System.Web.UI.Page
 
 
-
+    Private strPdiConn As String = ConfigurationManager.ConnectionStrings("pdiConnectionString").ToString()
     Private MailTitleList As New ArrayList
 
 
+    Private Sub setVIew()
+        Dim MailSettings As XElement = XElement.Load(My.Settings("MailSettings").ToString().Trim())
+        Dim qAsr550Req = (From x In MailSettings.<ASR5500>.<Title>
+                          Select x.<Req>.Value, x.<Pass>.Value, x.<NotPass>.Value).ToArray()
+
+        MailTitleList.Add(qAsr550Req(0).Req.Trim())
+        MailTitleList.Add(qAsr550Req(1).Pass.Trim())
+        MailTitleList.Add(qAsr550Req(2).NotPass.Trim())
+
+        'コードで書かないと、ポストバックの影響で値取れない。。
+        Dim Dc As New MembersDataContext(strPdiConn)
+        Dim qMember = (From x In Dc.tblmember Where x.show = 1 AndAlso x.team = 1).ToArray()
+        For Each mem As tblmember In qMember
+            ddListPersonTo.Items.Add(New ListItem(mem.username_kanji.Trim, mem.mailaddress.Trim))
+            ddListPersonFrom.Items.Add(New ListItem(mem.username_kanji.Trim, mem.mailaddress.Trim))
+        Next
+    End Sub
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
         Try
+           
 
-            Dim MailSettings As XElement = XElement.Load(My.Settings("MailSettings").ToString().Trim())
-
-            Dim qAsr550Req = (From x In MailSettings.<ASR5500>.<Title>
-                              Select x.<Req>.Value, x.<Pass>.Value, x.<NotPass>.Value).ToArray()
-
-            MailTitleList.Add(qAsr550Req(0).Req.Trim())
-            MailTitleList.Add(qAsr550Req(1).Pass.Trim())
-            MailTitleList.Add(qAsr550Req(2).NotPass.Trim())
-
+            setVIew()
 
         Catch ex As Exception
 
@@ -36,7 +46,7 @@ Public Class MailForm
 
     Private Sub btnSubmitMail_Click(sender As Object, e As EventArgs) Handles btnSubmitMail.Click
         Dim Title As String = ""
-        Dim Body As String = ddListPersonFrom.SelectedItem.Text & "さん" & ControlChars.NewLine _
+        Dim Body As String = ddListPersonTo.SelectedItem.Text & "さん" & ControlChars.NewLine _
             & "お疲れ様です。" & ControlChars.NewLine
 
 

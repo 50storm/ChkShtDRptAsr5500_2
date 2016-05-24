@@ -3,10 +3,10 @@
   <Profiles />
   <Settings>
     <Setting Name="MailSettings" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">C:\Users\Hiro\Documents\Visual Studio 2015\Projects\ChkShtDRptAsr5500_2\ChkShtDRptAsr5500_2\MailSetting.xml</Value>
+      <Value Profile="(Default)">C:\Users\higarashi\Documents\Visual Studio 2015\Projects\ChkShtDRptAsr5500_2\ChkShtDRptAsr5500_2\MailSetting.xml</Value>
     </Setting>
     <Setting Name="CellsSettings" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">C:\Users\Hiro\Documents\Visual Studio 2015\Projects\ChkShtDRptAsr5500_2\ChkShtDRptAsr5500_2\CellsSetting.xml</Value>
+      <Value Profile="(Default)">C:\Users\higarashi\Documents\Visual Studio 2015\Projects\ChkShtDRptAsr5500_2\ChkShtDRptAsr5500_2\CellsSetting.xml</Value>
     </Setting>
   </Settings>
 </SettingsFile>

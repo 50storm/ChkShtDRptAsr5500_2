@@ -25,6 +25,71 @@
       <cell8>
         本文
       </cell8>
+      <cell9>メールの個数</cell9>
+      <cell10>タイトル</cell10>
+      <cell11>タイトル</cell11>
+      <cell12>タイトル</cell12>
+      <cell13>ヘッダ</cell13>
+      <cell14>不良本文</cell14>
+      <cell15>不良本文</cell15>
+      <cell16>不良本文</cell16>
+      <cell17>フッター</cell17>
+      <cell18>
+        添付ファイル
+        [不良写真]
+      </cell18>
+      <cell19>
+        添付ファイル
+        [不良写真]
+      </cell19>
+      <cell20>
+        添付ファイル
+        [Criteria]
+      </cell20>
+      <cell21>
+        メールの個数
+      </cell21>
+      <cell22>
+        タイトル
+      </cell22>
+      <cell23>
+        タイトル
+      </cell23>
+      <cell24>
+        タイトル
+      </cell24>
+      <cell25>
+        ヘッダー
+      </cell25>
+      <cell26>
+        不良本文
+      </cell26>
+      <cell27>
+        不良本文
+      </cell27>
+      <cell28>
+        フッター
+      </cell28>
+      <cell29>
+        添付ファイル
+        [不良写真]
+      </cell29>
+      <cell30>
+        添付ファイル
+        [不良写真]
+      </cell30>
+      <cell31>
+        タイトル
+      </cell31>
+      <cell32>
+        不良本文
+      </cell32>
+      <cell33>
+        フッター
+      </cell33>
+      <cell34>
+        タイトル
+      </cell34>
     </Category>
     
     <Content>
@@ -52,6 +117,104 @@
       <cell8>
         【手動】HWWNがあるときに、Defect QTYの数量から、HWWNを差し引いたか？
       </cell8>
+      <cell9>
+        【※注意】同じSO、同じPID、同じ不良は一つのメールとして、S/Nをまとめているか？
+        (例)S/N     : SAD193301Y8,半角スペースSAD193301Y9
+      </cell9>
+      <cell10>
+        【手動】ASR5500の後に、コロン(:)を追加し、[]の後のセミコロン(;)を削除
+        (プログラムで打ち出し)CQAP ASR5500 daily defect report [ 1 ]; as of ～
+        (完成系)CQAP ASR5500: daily report [ 1 ] as of ～
+      </cell10>
+      <cell11>
+        日付は当日になっているか？
+      </cell11>
+      <cell12>
+        タイトルの番号[ 数字 ]はきちんと連番になっているか？
+        CQAP ASR5500: daily report [ 1 ] as of ～
+        CQAP ASR5500: daily report [ 2 ] as of ～
+      </cell12>
+      <cell13>
+        検査した期間のFrom日付とTo日付の日付は正しいか？
+      </cell13>
+      <cell14>
+        黄or赤紙と一致しているか？
+      </cell14>
+      <cell15>
+        S/Nの個数は合っているか？
+      </cell15>
+      <cell16>
+        Failure Rate in the SO/SS   : の個数とバーセンテージに誤りはないか？
+        (シート「Form」の「連番、Failure Rate入力」で入力）
+      </cell16>
+      <cell17>
+        【手動】機密保持のお願い文は挿入されているか？
+        This email may contain confidential ～
+      </cell17>
+      <cell18>
+        Viewerボタンを押して、添付ファイルは不良の個数分きちんと表示されるか？
+        パス名1,パス名2(半角カンマ区切り)
+        (例)\\pdidbserver\PDI共有\不具合データ\2016\Feb-5w\Feb-5w_ASR5500\SAD1953007P.jpg,\\pdidbserver\PDI共有\不具合データ\2016\Feb-5w\Feb-5w_ASR5500\SAD192900X0.jpg
+      </cell18>
+      <cell19>
+        添付ファイルの内容は、メールの内容とあっているか？
+      </cell19>
+      <cell20>
+        滅多に発見されない不良は、クライテリアのページを添付しているか？
+      </cell20>
+      <cell21>
+        【※注意】同じSO、同じPID、同じ不良は一つのメールとして、S/Nをまとめているか？
+        (例)S/N     : SAD193301Y8,半角スペースSAD193301Y9
+      </cell21>
+      <cell22>
+        【手動】ASR5500の後に、コロン(:)を追加し、[]の後のセミコロン(;)を削除
+        (プログラムで打ち出し)CQAP ASR5500 daily defect report [ 1 ]; as of ～
+        (完成系)CQAP ASR5500: daily report [ 1 ] as of ～
+      </cell22>
+      <cell23>
+        日付は当日になっているか？
+      </cell23>
+      <cell24>
+        タイトルの番号[ 数字 ]はきちんと連番になっているか？
+        CQAP ASR5500: daily report [ 1 ] as of ～
+        CQAP ASR5500: daily report [ 2 ] as of ～
+      </cell24>
+      <cell25>
+        検査した期間のFrom日付とTo日付の日付は正しいか？
+      </cell25>
+      <cell26>
+        黄or赤紙と一致しているか？
+      </cell26>
+      <cell27>
+        【手動】機密保持のお願い文は挿入されているか？
+        This email may contain confidential ～
+      </cell27>
+      <cell28>
+        Viewerボタンを押して、添付ファイルは不良の個数分きちんと表示されるか？
+        パス名1,パス名2(半角カンマ区切り)
+        (例)\\pdidbserver\PDI共有\不具合データ\2016\Feb-5w\Feb-5w_ASR5500\SAD1953007P.jpg,\\pdidbserver\PDI共有\不具合データ\2016\Feb-5w\Feb-5w_ASR5500\SAD192900X0.jpg
+      </cell28>
+      <cell29>
+        添付ファイルの内容は、メールの内容とあっているか？
+      </cell29>
+      <cell30>
+        日付は祝日当日になっているか？（入力ウィンドウでで入力した値)
+      </cell30>
+      <cell31>
+        日付は祝日当日になっているか？（入力ウィンドウでで入力した値)
+      </cell31>
+      <cell32>
+        休日と次回配信日の日付は合っているか？
+      </cell32>
+      <cell33>
+        機密保持のお願い文は挿入されているか？
+        This email may contain confidential ～
+      </cell33>
+      <cell34>
+        【手動】コロンをASR5500の後にコロン(:)付与したか？
+        (プログラムで打ち出し)[Summary] CQAP ASR5500 daily report as of ～
+        (完成系)[Summary] CQAP: ASR5500 daily report as of ～
+      </cell34>
     </Content>
   </ASR5500>
 

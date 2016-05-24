@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/SiteChkSheet.Master" CodeBehind="MailForm.aspx.vb" Inherits="ChkShtDRptAsr5500.MailForm" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/SiteChkSheet.Master" CodeBehind="MailForm.aspx.vb" Inherits="ChkShtDRptAsr5500.MailForm" EnableEventValidation="False" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ChkShtDRptAsr5500" runat="server">
     <div>
        
@@ -10,16 +10,17 @@
 
     <div>
         <asp:Label ID="lblTo" runat="server" Text="To:"></asp:Label>
-        <asp:DropDownList ID="ddListPersonTo" runat="server">
-           <asp:ListItem Value="igarashi@hnps.co.jp">五十嵐</asp:ListItem>
+        <asp:DropDownList ID="ddListPersonTo" runat="server" >
         </asp:DropDownList>
         
 
-        <asp:Label ID="lblFrom" runat="server" Text="FROM："></asp:Label>
+   
+       <asp:Label ID="lblFrom" runat="server" Text="FROM："></asp:Label>
        <asp:DropDownList ID="ddListPersonFrom" runat="server">
-           <asp:ListItem Value="igarashi@hnps.co.jp">五十嵐</asp:ListItem>
        </asp:DropDownList>
+
        <asp:Label ID="lblMsg" runat="server" Text="メッセージが表示されます" ForeColor="Red"></asp:Label>
+        
 
     </div>
     <div>
