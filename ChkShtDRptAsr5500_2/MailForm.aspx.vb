@@ -31,16 +31,16 @@ Public Class MailForm
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
-        Try
-           
+        'Try
 
-            setVIew()
 
-        Catch ex As Exception
+        setVIew()
 
-            Me.lblMsg.Text = ex.Message
+        'Catch ex As Exception
 
-        End Try
+        '    Me.lblMsg.Text = ex.Message
+
+        'End Try
 
     End Sub
 
@@ -81,9 +81,9 @@ Public Class MailForm
 
 
 
-        Try
+        'Try
 
-            Dim msg As New MailMessage(ddListPersonFrom.SelectedValue.Trim(), ddListPersonTo.SelectedValue.Trim(), Title.Trim(), Body)
+        Dim msg As New MailMessage(ddListPersonFrom.SelectedValue.Trim(), ddListPersonTo.SelectedValue.Trim(), Title.Trim(), Body)
             Dim SmtpClientObj As New SmtpClient()
             SmtpClientObj.Host = "smtp.hnps.co.jp"
             SmtpClientObj.Port = 587
@@ -112,12 +112,12 @@ Public Class MailForm
             msg.Dispose()
             SmtpClientObj.Dispose()
             Me.lblMsg.Text = "メールを送信しました。"
-        Catch ex As Exception
-            Me.lblMsg.Text = "メールを送信できませんでした。"
+        'Catch ex As Exception
+        '    Me.lblMsg.Text = "メールを送信できませんでした。"
 
 
 
-        End Try
+        'End Try
 
     End Sub
 

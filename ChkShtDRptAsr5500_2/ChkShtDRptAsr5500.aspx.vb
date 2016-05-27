@@ -1327,9 +1327,9 @@ Public Class ChkShtDRptAsr5500
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
-        Try
+        'Try
 
-            If Page.IsPostBack Then
+        If Page.IsPostBack Then
 
             Else
                 Me.setView()
@@ -1371,26 +1371,25 @@ Public Class ChkShtDRptAsr5500
                                  Order By x.id Descending).ToArray()
 
                     Me.txtYear.Text = Query(0).date.ToString().Substring(0, 10)
-
-
-
                     setChkBox(Query)
+                    Session.Remove("searchKey")
+
                 End If
 
             End If
 
-        Catch ex As Exception
-            Me.lblMsg.Text = ex.Message
-            Exit Sub
+        'Catch ex As Exception
+        '    Me.lblMsg.Text = ex.Message
+        '    Exit Sub
 
-        End Try
+        'End Try
 
     End Sub
 
     Protected Sub btnInsert_Click(sender As Object, e As EventArgs) Handles btnSubmit.Click
-        Try
-            '入力値検証
-            If Not Me.RBtnInsert.Checked AndAlso Not Me.RBtnUpdate.Checked And Not Me.RBtnDelete.Checked Then
+        'Try
+        '入力値検証
+        If Not Me.RBtnInsert.Checked AndAlso Not Me.RBtnUpdate.Checked And Not Me.RBtnDelete.Checked Then
                 Me.lblMsg.Text = "モードが選択されていません。"
                 Me.RBtnInsert.BackColor = System.Drawing.Color.Yellow
                 Me.RBtnUpdate.BackColor = System.Drawing.Color.Yellow
@@ -1449,31 +1448,31 @@ Public Class ChkShtDRptAsr5500
             End If
 
 
-        Catch ex As Exception
-            Me.lblMsg.Text = ex.Message
-            Exit Sub
-        End Try
+        'Catch ex As Exception
+        '    Me.lblMsg.Text = ex.Message
+        '    Exit Sub
+        'End Try
     End Sub
 
 
     Protected Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
-        Try
-            Response.Redirect("~/Search.aspx")
-        Catch ex As Exception
-            Me.lblMsg.Text = ex.Message
-            Exit Sub
-        End Try
+        'Try
+        Response.Redirect("~/Search.aspx")
+        'Catch ex As Exception
+        '    Me.lblMsg.Text = ex.Message
+        '    Exit Sub
+        'End Try
 
     End Sub
 
     Protected Sub btnMail_Click(sender As Object, e As EventArgs) Handles btnMail.Click
-        Try
-            Response.Redirect("~/MailForm.aspx")
+        'Try
+        Response.Redirect("~/MailForm.aspx")
 
-        Catch ex As Exception
-            Me.lblMsg.Text = ex.Message
-            Exit Sub
-        End Try
+        'Catch ex As Exception
+        '    Me.lblMsg.Text = ex.Message
+        '    Exit Sub
+        'End Try
 
     End Sub
 End Class

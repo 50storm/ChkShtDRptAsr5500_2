@@ -11,9 +11,9 @@ Public Class Search
 
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        Try
+        'Try
 
-            If Not Page.IsPostBack Then
+        If Not Page.IsPostBack Then
                 '初期表示
 
                 Me.txtDateFrom.Text = Now.ToString("yyyy/MM/dd")
@@ -40,19 +40,19 @@ Public Class Search
 
             End If
 
-        Catch ex As Exception
-            Me.lblMsg.Text = ex.Message
-            Exit Sub
+        'Catch ex As Exception
+        '    Me.lblMsg.Text = ex.Message
+        '    Exit Sub
 
-        End Try
+        'End Try
 
 
     End Sub
 
     Protected Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
-        Try
+        'Try
 
-            If Me.txtDateFrom.Text.Trim() = String.Empty And Me.txtDateTo.Text.Trim() = String.Empty Then
+        If Me.txtDateFrom.Text.Trim() = String.Empty And Me.txtDateTo.Text.Trim() = String.Empty Then
                 Me.lblMsg.Text = "日付のFromとToが入力されていません。"
 
             End If
@@ -87,10 +87,10 @@ Public Class Search
                 End If
             End Using
 
-        Catch ex As Exception
-            Me.lblMsg.Text = ex.Message
-            Exit Sub
-        End Try
+        'Catch ex As Exception
+        '    Me.lblMsg.Text = ex.Message
+        '    Exit Sub
+        'End Try
 
     End Sub
 
@@ -98,16 +98,16 @@ Public Class Search
 
     '1行が作成されたら、発生するイベント
     Private Sub GridView1_RowCreated(sender As Object, e As GridViewRowEventArgs) Handles GridView1.RowCreated
-        Try
+        'Try
 
-            If e.Row.RowType = DataControlRowType.DataRow OrElse e.Row.RowType = DataControlRowType.Header Then
+        If e.Row.RowType = DataControlRowType.DataRow OrElse e.Row.RowType = DataControlRowType.Header Then
                 'e.Row.Cells(0).Visible = False
             End If
 
-        Catch ex As Exception
-            Me.lblMsg.Text = ex.Message
-            Exit Sub
-        End Try
+        'Catch ex As Exception
+        '    Me.lblMsg.Text = ex.Message
+        '    Exit Sub
+        'End Try
 
     End Sub
     Protected Sub GridView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles GridView1.SelectedIndexChanged
@@ -172,14 +172,14 @@ Public Class Search
     End Sub
 
     Protected Sub btnToMainSys_Click(sender As Object, e As EventArgs) Handles btnToMainSys.Click
-        Try
-            Me.Response.Redirect("~/ChkShtDRptAsr5500.aspx")
+        'Try
+        Me.Response.Redirect("~/ChkShtDRptAsr5500.aspx")
 
-        Catch ex As Exception
-            Me.lblMsg.Text = ex.Message
-            Exit Sub
+        'Catch ex As Exception
+        '    Me.lblMsg.Text = ex.Message
+        '    Exit Sub
 
-        End Try
+        'End Try
 
     End Sub
 End Class

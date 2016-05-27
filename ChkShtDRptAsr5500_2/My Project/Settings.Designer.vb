@@ -73,6 +73,15 @@ Namespace My
                 Return CType(Me("CellsSettings"),String)
             End Get
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("F:\ChkShtAppErrorLog.txt")>  _
+        Public ReadOnly Property ErrorLog() As String
+            Get
+                Return CType(Me("ErrorLog"),String)
+            End Get
+        End Property
     End Class
 End Namespace
 
