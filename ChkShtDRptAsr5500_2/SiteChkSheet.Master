@@ -18,10 +18,33 @@ table tr td
 	vertical-align: top;
 	border-bottom: 1px solid #ddd;
     }
+
+    body {
+   
+   /*font-family: helvetica, arial, 'hiragino kaku gothic pro', meiryo, 'ms pgothic', sans-serif;*/
+
+   /*font-family: arial, sans-serif;*/
+   font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+
+      }
+    .ui-wiget {
+   font-family: helvetica, arial, 'hiragino kaku gothic pro', meiryo, 'ms pgothic', sans-serif;
+
+    }
+    .ui-button-text-only .ui-button-text{
+	padding-top:0em;
+    padding-bottom:0em;
+               
+    }
+    .master-page-title {
+     background-color:	#C0C0C0;
+
+    
+    }
 </style>
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
+    <title>CheckSheet System</title>
     
 </head>
 
@@ -29,7 +52,7 @@ table tr td
     <form id="form1" runat="server">
     <div>
     <header>
-    <h1>CheckSheet System</h1>
+    <h1 class="master-page-title">CheckSheet System</h1>
     </header>
     </div>
     <div>

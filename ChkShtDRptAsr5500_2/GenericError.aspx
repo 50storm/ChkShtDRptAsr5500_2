@@ -1,25 +1,11 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="GenericError.aspx.vb" Inherits="ChkShtDRptAsr5500.GenericError" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>ChkShtSystem Error</title>
-</head>
-<body>
-    <form id="form1" runat="server">
-
-    <div>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/SiteChkSheet.Master" CodeBehind="GenericError.aspx.vb" Inherits="ChkShtDRptAsr5500.GenericError1" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="ChkShtDRptAsr5500" runat="server">
+     <div>
         <p>
-        <asp:Label ID="Label1" runat="server" Text="システムエラーが発生しました。"></asp:Label>
+        <asp:Label ID="Label1" runat="server" Text="システムエラーが発生しました。" ForeColor="#FF3300"></asp:Label>
         </p>
         <p>システム管理者へ連絡してください。</p>
 
     </div>
    
-
-    </form>
-
-</body>
-</html>
+</asp:Content>

@@ -3,6 +3,15 @@
     <script>
         $(function () {
             $("input[type=submit], a, button").button();
+            // trの中で奇数番目のものを対象にする   
+            $('tr:odd').css({
+                backgroundColor: '#aaaaaa'
+            });
+            // trの中で偶数番目のものを対象にする   
+            $('tr:even').css({
+                //backgroundColor: '#ffffff'
+                backgroundColor:  '#E6E6FA'
+            });
 
             $("#ChkShtDRptAsr5500_txtYear").datepicker({
                 dateFormat: 'yy/mm/dd',
@@ -126,7 +135,7 @@
         });
     </script>
 
-    <h2>Daily Report ASR5500 CheckSheet</h2>
+    <h2 class="header-sheet-name">Daily Report ASR5500 CheckSheet</h2>
         <div>
             <asp:RadioButton ID="RBtnInsert" runat="server" GroupName="Menu" Text="登録" />
              <asp:RadioButton ID="RBtnUpdate" runat="server" GroupName="Menu" Text="修正" />
