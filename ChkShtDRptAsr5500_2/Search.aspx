@@ -2,8 +2,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ChkShtDRptAsr5500" runat="server">
         <script>
         $(function () {
-            //$("#ChkShtDRptAsr5500_txtDateFrom").val(getCurrentDate());
-            //$("#ChkShtDRptAsr5500_txtDateTo").val(getCurrentDate());
+            
+            $("input[type=submit], a, button").button();
             $("#ChkShtDRptAsr5500_txtDateFrom").datepicker({
                 dateFormat: 'yy/mm/dd',
                 showOn: "button",

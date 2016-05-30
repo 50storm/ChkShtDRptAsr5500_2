@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ChkShtDRptAsr5500" runat="server">
     <script>
         $(function () {
-           // $("#ChkShtDRptAsr5500_txtYear").val(getCurrentDate());
+            $("input[type=submit], a, button").button();
 
             $("#ChkShtDRptAsr5500_txtYear").datepicker({
                 dateFormat: 'yy/mm/dd',
@@ -14,15 +14,140 @@
             //$("#accordion").accordion();
             $("#tabs").tabs();
        
+
+            //チェックが入ってるのは背景色追加
+            //$(":checked").parent().css("background", "#f3f365");
+            //$("input:checked").css("background", "#f3f365");
+
+            var chkboxes = $("input[type=checkbox]");
+            chkboxes.filter(':checked').parent().css('background', '#f3f365');
+
+
+            //var radiobtns = $("input[type=radio]");
+            //radiobtns.filter(':checked').parent().css('background-color', '#f3f365');
+
+
+
+
+            /*
+            <input type="checkbox"> には background が効かない..Labelに色付け。
+            */
+            /*
+            $.each(chkboxes, function (i,elem) {
+                //console.log($(this).is(":checked"));//false
+
+
+                //if($(this).is(":checked")){
+                //    $(this).css("background", "#f3f365");
+                //}
+
+                if ($(this).prop('checked')) {
+                    alert("チェックされています。");
+                    $(this).css("background", "#f3f365");
+
+                }
+                else {
+                    console.log("チェックされていません。");
+                }
+
+               // console.log(elem.checked);
+
+            });
+            */
+            
+
+            //クリックイベント発火
+            $("input").click(function (e) {
+                var t = e.target.type;
+                var chk = $(this).prop('checked');
+                var name = $(this).attr('name');
+                //チェックが入ったか入ってないかで条件分岐
+                if (t == 'checkbox') {
+                    if (chk == true) {
+                        $(this).parent().css('background', '#f3f365');
+                    } else {
+                        $(this).parent().css('background-color', '');
+                    }
+                }
+            });
+
+
+            $("input[type=radio]").click(function (e) {
+               // alert("click");
+
+               // $(this).filter(':checked').parent().css('background', '#f3f365');
+                
+                var chk = $(this).prop('checked');
+                var val = $(this).val()
+                $("label[for=ChkShtDRptAsr5500_" + val + "]").css('background', '#f3f365');
+
+            });
+            $("input[type=radio]").blur(function (e) {
+               // alert("blur");
+
+                //$(this).parent().css('background', '');
+                //$(this).css('background-color', '');
+                //$(this).closest('label').css('background-color', '');
+
+                
+
+          //      var val = $(this).val()
+          //      switch (val) {
+          //          case "RBtnInsert":
+          //              $("label[name=RBtnInsert]").css('background', 'none');
+          //              break;
+          //
+          //          case "RBtnUpdate":
+          //              $("label[name=RBtnUpdate]").css('background', 'none');
+          //              break;
+          //
+          //
+          //          case "RBtnDelete":
+          //              $("label[name=RBtnDelete]").css('background', 'none');
+          //              break;
+          //
+          //      
+          //      }
+          //
+
+                //alert(val);
+           //     console.log(val);
+                var val = $(this).val()
+                var chk = $(this).prop('checked');
+                //alert(chk);
+                $("label[for=ChkShtDRptAsr5500_" + val + "]").css('background', '');
+                
+
+                //$("label[for=ChkShtDRptAsr5500_" + val + "]").css('background-color', '');
+                
+            });
+
+
         });
     </script>
 
     <h2>Daily Report ASR5500 CheckSheet</h2>
         <div>
             <asp:RadioButton ID="RBtnInsert" runat="server" GroupName="Menu" Text="登録" />
-            <asp:RadioButton ID="RBtnUpdate" runat="server" GroupName="Menu" Text="修正" />
+             <asp:RadioButton ID="RBtnUpdate" runat="server" GroupName="Menu" Text="修正" />
             <asp:RadioButton ID="RBtnDelete" runat="server" GroupName="Menu" Text="削除" />
-         </div>
+        
+                
+
+            <%--<label id="lblInst" >
+                <asp:RadioButton ID="RBtnInsert" runat="server" GroupName="Menu" />
+                登録
+            </label>
+            <label  id="lblUpd" >
+                <asp:RadioButton ID="RBtnUpdate" runat="server" GroupName="Menu" />
+                修正
+            </label>
+            <label   id="lbldel" >
+                <asp:RadioButton ID="RBtnDelete" runat="server" GroupName="Menu"  />
+                削除
+             </label>--%>
+
+             </div>
         <div>
             <asp:TextBox ID="txtYear" runat="server"></asp:TextBox>
             <asp:button runat="server" text="データ検索" ID="btnSearch" />

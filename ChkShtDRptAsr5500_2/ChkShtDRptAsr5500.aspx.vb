@@ -1370,9 +1370,13 @@ Public Class ChkShtDRptAsr5500
                                  Where x.id = CInt(Session("searchKey"))
                                  Order By x.id Descending).ToArray()
 
-                    Me.txtYear.Text = Query(0).date.ToString().Substring(0, 10)
-                    setChkBox(Query)
-                    Session.Remove("searchKey")
+
+                setChkBox(Query)
+                Me.txtYear.Text = Query(0).date.ToString().Substring(0, 10)
+                Me.RBtnUpdate.Checked = True
+
+
+                Session.Remove("searchKey")
 
                 End If
 

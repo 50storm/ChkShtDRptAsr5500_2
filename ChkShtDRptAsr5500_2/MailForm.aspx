@@ -1,5 +1,25 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/SiteChkSheet.Master" CodeBehind="MailForm.aspx.vb" Inherits="ChkShtDRptAsr5500.MailForm" EnableEventValidation="False" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ChkShtDRptAsr5500" runat="server">
+    <script>
+        $(function () {
+            $("input[type=submit], a, button").button();
+
+
+            $("input[type=radio]").click(function (e) {
+                var chk = $(this).prop('checked');
+                var val = $(this).val()
+                $("label[for=ChkShtDRptAsr5500_" + val + "]").css('background', '#f3f365');
+
+            });
+            $("input[type=radio]").blur(function (e) {
+                var chk = $(this).prop('checked');
+                var val = $(this).val()
+                $("label[for=ChkShtDRptAsr5500_" + val + "]").css('background-color', '');
+            });
+        });
+    </script>
+
+
     <div>
        
             <asp:RadioButton ID="MenuRequest" runat="server" GroupName="Menu" Text="ダブルチェック依頼メール" />
