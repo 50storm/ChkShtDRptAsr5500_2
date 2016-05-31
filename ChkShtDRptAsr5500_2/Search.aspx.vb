@@ -6,7 +6,7 @@ Imports System.Transactions
 Public Class Search
     Inherits System.Web.UI.Page
 
-    Private strConn As String = ConfigurationManager.ConnectionStrings("ConnectionString").ToString()
+    Private strChkShtConn As String = ConfigurationManager.ConnectionStrings("chkShtConnectionString").ToString()
 
 
 
@@ -20,23 +20,23 @@ Public Class Search
                 Me.txtDateTo.Text = Now.ToString("yyyy/MM/dd")
 
 
-                Using Dc As New Asr5500ChkSheetDataContext(strConn)
+            Using Dc As New Asr5500ChkSheetDataContext(strChkShtConn)
 
 
-                    Dim Query = From x In Dc.asr5500_chksheets Order By x.id
-                    Me.GridView1.DataSource = Query
-                    Me.GridView1.DataBind()
-                    If (Me.GridView1.Rows.Count = 0) Then
-                        '検索ゼロ件の時のコード
-                        Me.GridView1.Visible = False
-                        Me.lblMsg.Text = "登録件数は0件です。"
-                    Else
-                        Me.GridView1.Visible = True
-                        Me.lblMsg.Text = "データ一覧を初期表示してます"
-                        Me.GridView1.Focus()
-                    End If
-                End Using
-            Else
+                Dim Query = From x In Dc.asr5500_chksheets Order By x.id
+                Me.GridView1.DataSource = Query
+                Me.GridView1.DataBind()
+                If (Me.GridView1.Rows.Count = 0) Then
+                    '検索ゼロ件の時のコード
+                    Me.GridView1.Visible = False
+                    Me.lblMsg.Text = "登録件数は0件です。"
+                Else
+                    Me.GridView1.Visible = True
+                    Me.lblMsg.Text = "データ一覧を初期表示してます"
+                    Me.GridView1.Focus()
+                End If
+            End Using
+        Else
 
             End If
 
@@ -69,23 +69,23 @@ Public Class Search
             End If
 
 
-            Using Dc As New Asr5500ChkSheetDataContext(strConn)
-                Dim Query = From x In Dc.asr5500_chksheets
-                            Where x.date >= CDate(Me.txtDateFrom.Text) And x.date <= CDate(Me.txtDateTo.Text)
-                            Order By x.id
+        Using Dc As New Asr5500ChkSheetDataContext(strChkShtConn)
+            Dim Query = From x In Dc.asr5500_chksheets
+                        Where x.date >= CDate(Me.txtDateFrom.Text) And x.date <= CDate(Me.txtDateTo.Text)
+                        Order By x.id
 
 
-                Me.GridView1.DataSource = Query
-                Me.GridView1.DataBind()
-                If (Me.GridView1.Rows.Count = 0) Then
-                    '検索ゼロ件の時のコード
-                    Me.GridView1.Visible = False
-                    Me.lblMsg.Text = "検索結果0件です。"
-                Else
-                    Me.GridView1.Visible = True
-                    Me.lblMsg.Text = "検索結果を表示してます"
-                End If
-            End Using
+            Me.GridView1.DataSource = Query
+            Me.GridView1.DataBind()
+            If (Me.GridView1.Rows.Count = 0) Then
+                '検索ゼロ件の時のコード
+                Me.GridView1.Visible = False
+                Me.lblMsg.Text = "検索結果0件です。"
+            Else
+                Me.GridView1.Visible = True
+                Me.lblMsg.Text = "検索結果を表示してます"
+            End If
+        End Using
 
         'Catch ex As Exception
         '    Me.lblMsg.Text = ex.Message
@@ -122,7 +122,7 @@ Public Class Search
 
         Dim key As String = dr.Cells(1).Text
 
-        Dim Dc As New Asr5500ChkSheetDataContext(strConn)
+        Dim Dc As New Asr5500ChkSheetDataContext(strChkShtConn)
         Dim Query = (From x In Dc.asr5500_chksheets Where x.id = CInt(key) Select x).ToArray()
 
         Me.Session("searchKey") = Query(0).id.ToString()
@@ -150,7 +150,7 @@ Public Class Search
 
         '                Dim key As String = dr.Cells(1).Text
 
-        '                Dim Dc As New Asr5500ChkSheetDataContext(strConn)
+        '                Dim Dc As New Asr5500ChkSheetDataContext(strChkShtConn)
         '                Dim Query = (From x In Dc.asr5500_chksheets Where x.id = CInt(key) Select x).ToArray()
 
         '                Me.Session("searchKey") = Query(0).id.ToString()

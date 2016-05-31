@@ -3,11 +3,10 @@
     <script>
         $(function () {
             $("input[type=submit], a, button").button();
-            // trの中で奇数番目のものを対象にする   
+
             $('tr:odd').css({
                 backgroundColor: '#aaaaaa'
             });
-            // trの中で偶数番目のものを対象にする   
             $('tr:even').css({
                 //backgroundColor: '#ffffff'
                 backgroundColor:  '#E6E6FA'
@@ -25,46 +24,11 @@
        
 
             //チェックが入ってるのは背景色追加
-            //$(":checked").parent().css("background", "#f3f365");
-            //$("input:checked").css("background", "#f3f365");
-
             var chkboxes = $("input[type=checkbox]");
             chkboxes.filter(':checked').parent().css('background', '#f3f365');
 
 
-            //var radiobtns = $("input[type=radio]");
-            //radiobtns.filter(':checked').parent().css('background-color', '#f3f365');
-
-
-
-
-            /*
-            <input type="checkbox"> には background が効かない..Labelに色付け。
-            */
-            /*
-            $.each(chkboxes, function (i,elem) {
-                //console.log($(this).is(":checked"));//false
-
-
-                //if($(this).is(":checked")){
-                //    $(this).css("background", "#f3f365");
-                //}
-
-                if ($(this).prop('checked')) {
-                    alert("チェックされています。");
-                    $(this).css("background", "#f3f365");
-
-                }
-                else {
-                    console.log("チェックされていません。");
-                }
-
-               // console.log(elem.checked);
-
-            });
-            */
             
-
             //クリックイベント発火
             $("input").click(function (e) {
                 var t = e.target.type;
@@ -82,52 +46,17 @@
 
 
             $("input[type=radio]").click(function (e) {
-               // alert("click");
-
-               // $(this).filter(':checked').parent().css('background', '#f3f365');
-                
+               
                 var chk = $(this).prop('checked');
                 var val = $(this).val()
                 $("label[for=ChkShtDRptAsr5500_" + val + "]").css('background', '#f3f365');
 
             });
             $("input[type=radio]").blur(function (e) {
-               // alert("blur");
-
-                //$(this).parent().css('background', '');
-                //$(this).css('background-color', '');
-                //$(this).closest('label').css('background-color', '');
-
-                
-
-          //      var val = $(this).val()
-          //      switch (val) {
-          //          case "RBtnInsert":
-          //              $("label[name=RBtnInsert]").css('background', 'none');
-          //              break;
-          //
-          //          case "RBtnUpdate":
-          //              $("label[name=RBtnUpdate]").css('background', 'none');
-          //              break;
-          //
-          //
-          //          case "RBtnDelete":
-          //              $("label[name=RBtnDelete]").css('background', 'none');
-          //              break;
-          //
-          //      
-          //      }
-          //
-
-                //alert(val);
-           //     console.log(val);
+     
                 var val = $(this).val()
                 var chk = $(this).prop('checked');
-                //alert(chk);
                 $("label[for=ChkShtDRptAsr5500_" + val + "]").css('background', '');
-                
-
-                //$("label[for=ChkShtDRptAsr5500_" + val + "]").css('background-color', '');
                 
             });
 

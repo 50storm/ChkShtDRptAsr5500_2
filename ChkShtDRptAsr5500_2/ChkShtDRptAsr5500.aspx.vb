@@ -10,12 +10,12 @@ Imports System.Transactions
 
 Public Class ChkShtDRptAsr5500
     Inherits System.Web.UI.Page
-    Private strConn As String = ConfigurationManager.ConnectionStrings("ConnectionString").ToString()
+    'TODO:名前を混乱するから変える/Web.configも忘れず
+    Private strChkShtConn As String = ConfigurationManager.ConnectionStrings("chkShtConnectionString").ToString()
     Private strPdiConn As String = ConfigurationManager.ConnectionStrings("pdiConnectionString").ToString()
 
-
     Private Function IsRegisterd(keyDate As String) As Boolean
-        Dim Dc As New Asr5500ChkSheetDataContext(strConn)
+        Dim Dc As New Asr5500ChkSheetDataContext(strChkShtConn)
         Dim Query = (From x In Dc.asr5500_chksheets
                      Where x.date = CDate(keyDate)
                      Order By x.id Descending).ToArray()
@@ -34,7 +34,7 @@ Public Class ChkShtDRptAsr5500
     Private Sub DeleteData()
         Try
 
-            Using ASR5500ChkSheet As New Asr5500ChkSheetDataContext(strConn)
+            Using ASR5500ChkSheet As New Asr5500ChkSheetDataContext(strChkShtConn)
                 ASR5500ChkSheet.ExecuteCommand("DELETE FROM asr5500_chksheets WHERE date = {0}", Me.txtYear.Text.Replace("/", "-"))
 
             End Using
@@ -101,7 +101,7 @@ Public Class ChkShtDRptAsr5500
         Dim updSql As String = MakeUpdSql()
 
 
-        Using con As New SqlConnection(strConn)
+        Using con As New SqlConnection(strChkShtConn)
 
 
             Dim trans As SqlTransaction
@@ -221,7 +221,7 @@ Public Class ChkShtDRptAsr5500
 
 
     Private Sub InsertData()
-        Using con As New SqlConnection(strConn)
+        Using con As New SqlConnection(strChkShtConn)
 
             Using ObjContext As New DataContext(con)
                 Dim Asr5500ChkSheet = ObjContext.GetTable(Of asr5500_chksheets)()
@@ -942,7 +942,7 @@ Public Class ChkShtDRptAsr5500
         End If
 
         'ダブルチェック
-        If Query(0).no1_dblchk Is Nothing OrElse Query(0).no1 = False Then
+        If Query(0).no1_dblchk Is Nothing OrElse Query(0).no1_dblchk = False Then
             Me.ChkBoxChecker01.Checked = False
 
         Else
@@ -1336,10 +1336,10 @@ Public Class ChkShtDRptAsr5500
 
                 If Me.Session("searchKey") Is Nothing Then
 
-                    Dim Dc As New Asr5500ChkSheetDataContext(strConn)
-                    'Dim Query = (From x In Dc.asr5500_chksheets Order By x.id Descending).ToArray()
+                Dim Dc As New Asr5500ChkSheetDataContext(strChkShtConn)
+                'Dim Query = (From x In Dc.asr5500_chksheets Order By x.id Descending).ToArray()
 
-                    Dim Query = (From x In Dc.asr5500_chksheets
+                Dim Query = (From x In Dc.asr5500_chksheets
                                  Where x.date = Now
                                  Order By x.id Descending).ToArray()
 
@@ -1365,8 +1365,8 @@ Public Class ChkShtDRptAsr5500
 
                 Else
 
-                    Dim Dc As New Asr5500ChkSheetDataContext(strConn)
-                    Dim Query = (From x In Dc.asr5500_chksheets
+                Dim Dc As New Asr5500ChkSheetDataContext(strChkShtConn)
+                Dim Query = (From x In Dc.asr5500_chksheets
                                  Where x.id = CInt(Session("searchKey"))
                                  Order By x.id Descending).ToArray()
 
