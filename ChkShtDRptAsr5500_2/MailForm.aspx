@@ -2,6 +2,17 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ChkShtDRptAsr5500" runat="server">
     <script>
         $(function () {
+            $("#ChkShtDRptAsr5500_txtMailBody").tooltip(
+                        {
+                            position:{
+
+                                of: $("#ChkShtDRptAsr5500_txtMailBody"),//基準のコントロール
+                                my: "left top", //基準値
+                                at: "right-80 top-45"//セットする場所
+                            }
+                        
+            });
+
             $("input[type=submit], a, button").button();
 
 
@@ -54,7 +65,7 @@
         
     </div>
     <div>
-        <asp:TextBox ID="txtMailBody" runat="server" Rows="100" Width="500px" Height="200px" TextMode="MultiLine" ToolTip="コメント"></asp:TextBox>
+        <asp:TextBox ID="txtMailBody" runat="server" Rows="100" Width="500px" Height="200px" TextMode="MultiLine" ToolTip="システム開発支援の依頼は　3000円/時間～　フリーランスエンジニア＆英語講師　五十嵐まで"></asp:TextBox>
 
     </div>
     

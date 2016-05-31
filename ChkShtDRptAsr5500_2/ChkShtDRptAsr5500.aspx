@@ -60,6 +60,8 @@
                 
             });
 
+            
+            $("#ChkShtDRptAsr5500_txtYear").tooltip();
 
         });
     </script>
@@ -87,7 +89,7 @@
 
              </div>
         <div>
-            <asp:TextBox ID="txtYear" runat="server"></asp:TextBox>
+            <asp:TextBox ID="txtYear" runat="server" ToolTip="システム開発支援の依頼は　3000円/時間～　フリーランスエンジニア＆英語講師　五十嵐まで"></asp:TextBox>
             <asp:button runat="server" text="データ検索" ID="btnSearch" />
             <asp:button runat="server" text="メール送信" ID="btnMail" />
         </div>

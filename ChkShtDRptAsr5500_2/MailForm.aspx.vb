@@ -83,7 +83,7 @@ Public Class MailForm
         End If
 
 
-
+        Body &= ControlChars.NewLine & "追加の機能強化、システム開発支援の依頼は　3000円/時間～" & ControlChars.NewLine & "フリーランスエンジニア＆英語講師　五十嵐まで"
         'Try
 
         Dim msg As New MailMessage(ddListPersonFrom.SelectedValue.Trim(), ddListPersonTo.SelectedValue.Trim(), Title.Trim(), Body)
@@ -110,8 +110,8 @@ Public Class MailForm
 
 
 
-            'メッセージを送信する
-            SmtpClientObj.Send(msg)
+        'メッセージを送信する
+        SmtpClientObj.Send(msg)
             msg.Dispose()
             SmtpClientObj.Dispose()
             Me.lblMsg.Text = "メールを送信しました。"

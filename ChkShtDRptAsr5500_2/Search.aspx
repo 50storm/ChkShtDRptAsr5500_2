@@ -16,13 +16,18 @@
                 buttonImage: "img/calendar_button.png",
                 buttonImageOnly: true
             });
+
+
+            
+            $("#ChkShtDRptAsr5500_txtDateFrom, #ChkShtDRptAsr5500_txtDateTo").tooltip();
+
         });
     </script>
     <h2>登録データ検索</h2>
     <%--<div style="border-bottom:1px solid black; ">--%>
     <div>
-    <asp:TextBox ID="txtDateFrom" runat="server"></asp:TextBox>～
-    <asp:TextBox ID="txtDateTo" runat="server"></asp:TextBox>
+    <asp:TextBox ID="txtDateFrom" runat="server" ToolTip="システム開発支援の依頼は　3000円/時間～　フリーランスエンジニア＆英語講師　五十嵐まで" ></asp:TextBox>～
+    <asp:TextBox ID="txtDateTo" runat="server" ToolTip="システム開発支援の依頼は　3000円/時間～　フリーランスエンジニア＆英語講師　五十嵐まで" ></asp:TextBox>
     <asp:Button ID="btnSearch" runat="server" Text="検索" />
     <asp:Label ID="lblMsg" runat="server" Text="Label"></asp:Label>
     </div>

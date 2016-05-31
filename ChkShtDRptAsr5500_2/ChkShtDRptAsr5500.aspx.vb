@@ -32,17 +32,17 @@ Public Class ChkShtDRptAsr5500
 
 
     Private Sub DeleteData()
-        Try
+        'Try
 
-            Using ASR5500ChkSheet As New Asr5500ChkSheetDataContext(strChkShtConn)
+        Using ASR5500ChkSheet As New Asr5500ChkSheetDataContext(strChkShtConn)
                 ASR5500ChkSheet.ExecuteCommand("DELETE FROM asr5500_chksheets WHERE date = {0}", Me.txtYear.Text.Replace("/", "-"))
 
             End Using
-            Me.lblMsg.Text = "チェックシートを削除しました"
+            Me.lblMsg.Text = "チェックシートを削除しました" & ControlChars.NewLine & "追加の機能強化、システム開発支援の依頼は　3000円/時間～" & ControlChars.NewLine & "フリーランスエンジニア＆英語講師　五十嵐まで"
 
-        Catch ex As Exception
-            Me.lblMsg.Text = "例外発生"
-        End Try
+        'Catch ex As Exception
+        '    Me.lblMsg.Text = "例外発生"
+        'End Try
 
 
     End Sub
@@ -199,7 +199,7 @@ Public Class ChkShtDRptAsr5500
                 SqlCmd.ExecuteNonQuery()
                 trans.Commit()
 
-                Me.lblMsg.Text = "チェックシートを修正しました"
+                Me.lblMsg.Text = "チェックシートを修正しました" & ControlChars.NewLine & "追加の機能強化、システム開発支援の依頼は　3000円/時間～" & ControlChars.NewLine & "フリーランスエンジニア＆英語講師　五十嵐まで"
 
             Catch ex As Exception
 
@@ -1433,8 +1433,9 @@ Public Class ChkShtDRptAsr5500
                 End If
 
                 Me.InsertData()
-                Me.lblMsg.Text = "チェックシートを作成しました。"
-                Exit Sub
+            Me.lblMsg.Text = "チェックシートを作成しました。" & ControlChars.NewLine & "追加の機能強化、システム開発支援の依頼は　3000円/時間～" & ControlChars.NewLine & "フリーランスエンジニア＆英語講師　五十嵐まで"
+
+            Exit Sub
             End If
 
             '修正
