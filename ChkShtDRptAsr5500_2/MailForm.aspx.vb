@@ -52,6 +52,9 @@ Public Class MailForm
 
         If Not MenuRequest.Checked AndAlso Not MenuPass.Checked AndAlso Not MenuNotPass.Checked Then
             Me.lblMsg.Text = "メニューが選択されていません。"
+            MenuRequest.BackColor = System.Drawing.Color.Red
+            MenuPass.BackColor = System.Drawing.Color.Red
+            MenuNotPass.BackColor = System.Drawing.Color.Red
             Exit Sub
 
         End If

@@ -17,6 +17,12 @@
                 $("label[for=ChkShtDRptAsr5500_" + val + "]").css('background-color', '');
             });
         });
+
+       
+        var isOk = function () {
+            if (!confirm('Ready ?')) {return false;}
+        }
+        
     </script>
 
 
@@ -48,14 +54,14 @@
         
     </div>
     <div>
-        <asp:TextBox ID="txtMailBody" runat="server" Rows="100" Width="500px" Height="500px" TextMode="MultiLine" ToolTip="コメント"></asp:TextBox>
+        <asp:TextBox ID="txtMailBody" runat="server" Rows="100" Width="500px" Height="200px" TextMode="MultiLine" ToolTip="コメント"></asp:TextBox>
 
     </div>
     
     <div>
    
        
-        <asp:Button ID="btnSubmitMail" runat="server" Text="メール送信" />
+        <asp:Button ID="btnSubmitMail" runat="server" Text="メール送信" OnClientClick="isOk();" />
          <asp:Button ID="btnToMainSys" runat="server" Text="戻る" />
     </div>
 </asp:Content>
